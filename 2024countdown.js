@@ -1,6 +1,6 @@
 if (window.location.pathname === "/" || window.location.pathname === "/Default.aspx")
 {
-function newCount() {
+function updateCountdown() {
     let e = 60 - (new Date).getSeconds(),
         t = new Date("01/01/2024 00:00:01") - new Date,
         n = parseInt(t / 864e5);
@@ -8,11 +8,11 @@ function newCount() {
     let a = parseInt(t / 36e5);
     t -= 60 * a * 60 * 1e3;
     let s = parseInt(t / 6e4);
-    document.getElementById("countdown-day").innerHTML = n
-    document.getElementById("countdown-hour").innerHTML = a
-    document.getElementById("countdown-min").innerHTML = s + 1
+    document.getElementById("updateCountdowndown-day").innerHTML = n
+    document.getElementById("updateCountdowndown-hour").innerHTML = a
+    document.getElementById("updateCountdowndown-min").innerHTML = s + 1
     setTimeout((function() {
-        newCount()
+        newupdateCountdown()
     }), 1e3 * e)
 }
 
@@ -110,17 +110,17 @@ const lang = {
 const t = lang[lang] || lang.en;
 
 var middle = document.querySelector("div.middle");
-middle.innerHTML = `<h1 class="countdown-title">${t.title}</h1><div class="countdown">
-    <div class="countdown-item flex-column">
-        <span id="countdown-day" class="countdown-time"></span>
+middle.innerHTML = `<h1 class="updateCountdown-title">${t.title}</h1><div class="updateCountdown">
+    <div class="updateCountdown-item flex-column">
+        <span id="updateCountdown-day" class="updateCountdown-time"></span>
         <span>${t.days}</span>
     </div>
-    <div class="countdown-item flex-column">
-        <span id="countdown-hour" class="countdown-time"></span>
+    <div class="updateCountdown-item flex-column">
+        <span id="updateCountdown-hour" class="updateCountdown-time"></span>
         <span>${t.hours}</span>
     </div>
-    <div class="countdown-item flex-column">
-        <span id="countdown-min" class="countdown-time"></span>
+    <div class="updateCountdown-item flex-column">
+        <span id="updateCountdown-min" class="updateCountdown-time"></span>
         <span>${t.minutes}</span>
     </div>
 </div>` + middle.innerHTML;
@@ -129,25 +129,25 @@ var styles = `.flex-column {
   display: flex;
   flex-direction: column;
 }
-.countdown-item {
+.updateCountdown-item {
   font-size: 12px;
   text-align: center;
   margin-left: 1rem;
   margin-right: 1rem;
 }
 
-.countdown-time {
+.updateCountdown-time {
   font-weight: bolder;
   font-size: 32px;
 }
 
-.countdown-title {
+.updateCountdown-title {
   font-weight: bolder;
   font-size: 24px;
   margin-top: 82px;
 }
 
-.countdown {
+.updateCountdown {
   display: flex;
   justify-content: center;
   margin-bottom: .5rem;
@@ -161,4 +161,4 @@ var styleSheet = document.createElement("style")
 styleSheet.innerText = styles
 document.head.appendChild(styleSheet)
 
-newCount();}
+newupdateCountdown();}
