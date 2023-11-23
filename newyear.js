@@ -2,7 +2,7 @@ if (window.location.pathname === "/" || window.location.pathname === "/Default.a
 {
 function updateCountdown() {
     let e = 60 - (new Date).getSeconds(),
-        t = new Date("03/31/2024 08:00:00") - new Date,
+        t = new Date("01/01/2024 00:00:01") - new Date,
         n = parseInt(t / 864e5);
     t -= 24 * n * 60 * 60 * 1e3;
     let a = parseInt(t / 36e5);
